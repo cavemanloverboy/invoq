@@ -18,6 +18,7 @@ pub mod invokee {
     pub fn invoke_other_program<'info>(
         ctx: Context<'_, '_, '_, 'info, Invoke<'info>>,
     ) -> Result<()> {
+        let data = vec![5; 1024];
         for _ in 0..20 {
             invoked::cpi::invoke_me(
                 CpiContext::new(
@@ -26,7 +27,7 @@ pub mod invokee {
                         anchor_doesnt_let_me_have_zero_accounts_here_with_cpi_feature: ctx.remaining_accounts[0].clone(),
                     },
                 ),
-                vec![5; 1024],
+                data.clone(),
             )?;
         }
 
