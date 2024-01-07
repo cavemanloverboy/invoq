@@ -1,0 +1,28 @@
+[package]
+name = "invokee"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "invokee"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = ["no-log-ix-name"]
+
+[dependencies]
+ahash = { version = "=0.8.4", default-features = false }
+anchor-lang = "0.29.0"
+solana-program = "1.16.24"
+invoked = { path = "../invoked", features = ["cpi"] }
+invoked2 = { path = "../invoked2", features = ["no-entrypoint"] }
+
+[dev-dependencies]
+solana-sdk = "1.16.24"
+solana-program-test = "1.16.24"
+tokio = { version = "1.35.1", features = ["full"] }

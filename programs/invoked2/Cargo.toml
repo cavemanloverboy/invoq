@@ -1,0 +1,20 @@
+[package]
+name = "invoked2"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "invoked2"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []            #"no-log-ix-name"]
+
+[dependencies]
+ahash = { version = "=0.8.4", default-features = false }
+solana-program = "=1.16.24"

@@ -1,0 +1,20 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+invokee = "uNmABrufQJDmvBFJ8XdPNKV5rJuyhPs7hqhXuVtg3zY"
+invoked = "DHUDQvqJmjAk83ChDeJxoddPC4TYhsNaV9UJ65adpmm8"
+invoked2 = "7Lo52siXF692aPaTDhwdkkeaDvKUqMWNx98RACVMrA7d"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo-test-bpf"
